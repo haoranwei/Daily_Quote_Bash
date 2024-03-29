@@ -31,8 +31,9 @@ void printColorText(const std::string& text, const std::string& color) {
 }
 
 int main() {
-    // Read the JSON file
-    FILE* fp = fopen("quotes.json", "r");
+    // Open the JSON file with a relative path
+    FILE* fp = fopen("/Daily_Quote_Bash/quotes.json", "r");
+
     char readBuffer[65536];
     rapidjson::FileReadStream is(fp, readBuffer, sizeof(readBuffer));
     rapidjson::Document document;
@@ -64,4 +65,3 @@ int main() {
 
     return 0;
 }
-
