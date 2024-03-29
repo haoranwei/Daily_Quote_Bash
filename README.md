@@ -8,14 +8,15 @@ In Daily_Quote_Bash_generator.cpp,
 ```c++
 FILE* fp = fopen("/Daily_Quote_Bash/quotes.json", "r");
 ```
-In setup_Daily_Quote_Bash.sh.
+In setup_Daily_Quote_Bash.sh(in shell/).
 Please modify the absolute path to prevent the executable file & quotes.json from being not found
 
 #### Setup
 ```bash
 cd Daily_Quote_Bash/
-./setup_Daily_Quote_Bash.sh
+./setup.sh
 ```
+
 #### Use
 In the terminal，enter
 ```bash

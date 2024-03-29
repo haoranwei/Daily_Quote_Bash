@@ -3,6 +3,7 @@
 # Check if the alias already exists in the bash configuration file
 if ! grep -q "alias dqb='./Daily_Quote_Bash/Daily_Quote_Bash'" ~/.bashrc; then
     # Add the alias to the bash configuration file
+    echo "# Add the alias 'dqb' to the bashrc" >> ~/.bashrc
     echo "alias dqb='./Daily_Quote_Bash/Daily_Quote_Bash'" >> ~/.bashrc
     echo "Alias 'dqb' added to ~/.bashrc"
 else
