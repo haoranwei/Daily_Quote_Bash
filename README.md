@@ -4,11 +4,16 @@
 This project is recommended to deploy the project directory to the root path （"/"）；
 
 #### Prerequisites
-In Daily_Quote_Bash_generator.cpp,
+#####In Daily_Quote_Bash_generator.cpp,
 ```c++
 FILE* fp = fopen("/Daily_Quote_Bash/quotes.json", "r");
 ```
-In setup_Daily_Quote_Bash.sh(in shell/).
+####In setup_Daily_Quote_Bash.sh(in shell/).
+```bash
+if ! grep -q "alias dqb='./Daily_Quote_Bash/Daily_Quote_Bash'" ~/.bashrc; then
+echo "alias dqb='./Daily_Quote_Bash/Daily_Quote_Bash'" >> ~/.bashrc
+alias dqb='./Daily_Quote_Bash/Daily_Quote_Bash'
+```
 Please modify the absolute path to prevent the executable file & quotes.json from being not found
 
 #### Setup
