@@ -17,6 +17,19 @@ int getRandomNumber(int min, int max) {
     return min + rand() % ((max + 1) - min);
 }
 
+// Function to print colored text
+void printColorText(const std::string& text, const std::string& color) {
+    if (color == "red") {
+        std::cout << "\033[1;31m" << text << "\033[0m"; // Red color
+    } else if (color == "green") {
+        std::cout << "\033[1;32m" << text << "\033[0m"; // Green color
+    } else if (color == "blue") {
+        std::cout << "\033[1;34m" << text << "\033[0m"; // Blue color
+    } else {
+        std::cout << text; // Default color
+    }
+}
+
 int main() {
     // Read the JSON file
     FILE* fp = fopen("quotes.json", "r");
@@ -35,9 +48,18 @@ int main() {
             allQuotes.push_back(quotes[i].GetString());
         }
         
-        // Select a random quote and print it
+        // Select a random quote and print it with color
         int randomIndex = getRandomNumber(0, allQuotes.size() - 1);
-        std::cout << "Random Quote: " << allQuotes[randomIndex] << std::endl;
+        std::string randomQuote = allQuotes[randomIndex];
+        
+        // Choose a random color
+        std::vector<std::string> colors = {"red", "green", "blue"};
+        int randomColorIndex = getRandomNumber(0, colors.size() - 1);
+        std::string randomColor = colors[randomColorIndex];
+        
+        std::cout << "Random Quote: ";
+        printColorText(randomQuote, randomColor);
+        std::cout << std::endl;
     }
 
     return 0;
